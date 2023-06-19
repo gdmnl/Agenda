@@ -755,7 +755,7 @@ inline void update_idx(const NewGraph& graph, int source){
             const VertexIdType &idx_start_cur = graph.get_in_neighbor_list_start_pos(cur);
             const VertexIdType &idx_end_cur = graph.get_in_neighbor_list_start_pos(cur + 1);
             const VertexIdType degree_cur = idx_end_cur - idx_start_cur;
-            if (degree_cur){
+            if (degree_cur > 0){
                 k = lrand()%degree_cur;
                 cur = graph.getOutNeighbor(idx_start_cur+k);
             }
